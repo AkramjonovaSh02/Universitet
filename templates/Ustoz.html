@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ustoz</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label>Ism:</label>
+        <input type="text" name="ism">
+        <br>
+        <label>Jins:</label>
+        <br>
+        <select name="yonalish">
+        {% for yonalish in yonalishlar%}
+        <option value="{{ yonalish.id }}">{{yonalish.nom}}</option>
+        {% endfor%}
+        </select>
+        <br>
+        <label>Asosiy:</label>
+        <select name="asosiy">
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <br>
+        <button>Qo'shish</button>
+    </form>
+
+</body>
+</html>

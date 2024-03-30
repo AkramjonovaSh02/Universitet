@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label>Nom:</label>
+        <input type="text" name="nom">
+        <br>
+        <label>Yonalish:</label>
+        <br>
+        <select name="yonalish">
+        {% for yonalish in yonalishlar%}
+        <option value="{{ yonalish.id }}">{{yonalish.nom}}</option>
+        {% endfor%}
+        </select>
+        <br>
+        <label>Asosiy:</label>
+        <select name="asosiy">
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <br>
+        <button>Qo'shish</button>
+    </form>
+</body>
+</html>
